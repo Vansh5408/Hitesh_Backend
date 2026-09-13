@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import {DB_NAME} from "../constants.js";
-import { asyncHandller } from "../utils/asyncHandller.js";
 
 // Old Implementation:
 // const connectDb= async()=>{
@@ -14,9 +13,9 @@ import { asyncHandller } from "../utils/asyncHandller.js";
 //     }
 // }
 
-const connectDb = asyncHandller(async (req, res, next) => {
+const connectDb = async () => {
     const url = await mongoose.connect(`${process.env.MONGO_URI}/${DB_NAME}`);
     console.log(`\n Mongo connect ${url.connection.host}`);
-});
+};
 
 export default connectDb;

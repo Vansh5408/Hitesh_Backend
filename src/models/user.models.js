@@ -32,7 +32,7 @@ const userSchema = new Schema({
         type:String  // cloudinary url
     },  
     watchHistory:[{
-        type:mongoose.model.type.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:"Video"
     }],
 

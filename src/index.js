@@ -3,6 +3,7 @@
 
 import dotenv from "dotenv";
 import connectDb from "./db/index.js";
+import { app } from "./app.js";
 dotenv.config({path:'./.env'});
 
 // when we use async and await its return promise so we use .then and .catch 
