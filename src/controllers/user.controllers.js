@@ -141,8 +141,8 @@ const logoutUser=asyncHandller(async (req,res)=>{
     User.findByIdAndUpdate(
         req.user._id,
         {
-            $set:{
-                refershToken:undefined
+            $unset:{
+                refershToken:1
             }
         },
         {
@@ -278,6 +278,8 @@ const updateUserImage=asyncHandller(async (req,res)=>{
 
     return res.status(200).json(new ApiResponse(200,user,"cover image update successfully"))
 })
+
+
 
 export  {registerUser,
     loginUser,
